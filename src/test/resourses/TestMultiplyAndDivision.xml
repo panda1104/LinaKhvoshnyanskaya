@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNG Run" verbose="2">
+
+
+    <test name="MultAndDiv">
+        <classes>
+            <class name="MultiplicationTest" />
+            <class name="DivisionTest" />
+        </classes>
+    </test>
+</suite>

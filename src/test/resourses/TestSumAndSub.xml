@@ -1,0 +1,19 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="TestNG Run" verbose="2">
+
+
+
+        <parameter name="value1" value= "1" />
+        <parameter name="value2" value="2"/>
+        <test name="SumAndSub">
+            <classes>
+                <class name="SumTest" />
+                <class name="SubTest" />
+                <class name="ParametrizedTest"/>
+            </classes>
+        </test>
+
+
+</suite>
