@@ -49,6 +49,15 @@
         </pluginManagement>
     </build>
 
+        <dependency>
+            <groupId>com.epam.tat.module4</groupId>
+            <artifactId>calculator</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <type>jar</type>
+            <systemPath>${project.basedir}/src/lib/calculator-1.0.jar</systemPath>
+        </dependency>
+
 
 
 </project>
