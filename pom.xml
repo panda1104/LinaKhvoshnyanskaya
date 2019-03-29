@@ -13,7 +13,6 @@
             2. Остутвует gitignore
             3. Отсутствует тестируемая библиотека
             -->
-    <dependencies>
 
 
   <properties>
@@ -21,6 +20,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
+    <dependencies>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
