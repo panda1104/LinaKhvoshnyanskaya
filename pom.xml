@@ -36,6 +36,18 @@
             <systemPath>${project.basedir}/calculator-1.0.jar</systemPath>
         </dependency>
 
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+
 
     </dependencies>
 
@@ -48,6 +60,11 @@
     -->
 
     <build>
+        <resources>
+            <resource>
+                <directory>src/test/resources</directory>
+            </resource>
+        </resources>
         <pluginManagement>
             <plugins>
                 <plugin>
@@ -56,7 +73,7 @@
                     <version>3.0.0-M3</version>
                     <configuration>
                         <suiteXmlFiles>
-                            src/test/resources/AllTest.xml
+                            ${project.basedir}/src/test/resources/SeleniumSuit.xml
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
