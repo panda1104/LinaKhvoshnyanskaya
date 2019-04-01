@@ -1,5 +1,6 @@
 package hw2;
 
+// TODO unused imports
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -24,6 +25,8 @@ import java.io.IOException;
 
 import static java.lang.System.setProperty;
 
+// TODO Class неотформатирован по Java Code Convention (CTRL + ALT + L)
+// TODO Имена методов не по Java Code Convention
 public class MantisTestUser {
 
     private WebDriver driver;
@@ -66,6 +69,7 @@ public class MantisTestUser {
     public void passwordMantisBt() {
 
         driver.findElement(By.id("password")).sendKeys("rootroot");
+        // TODO Автосгенерированный локатор
         driver.findElement(By.xpath("//*[@id=\"login-form\"]/fieldset/input[3]")).click();
         // Check login
         assertEquals(driver.findElement(By.className("user-info")).getText(),
@@ -85,6 +89,8 @@ public class MantisTestUser {
     public void manageButton()
     {
         // Check and Press button
+        // TODO Не понятно на какой элемент кликается
+        // TODO Автосгенерированный локатор
         driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[7]/a")).click();
         driver.findElement(By.xpath("//*[@id=\"sidebar\"]/ul/li[7]/a")).click();
     }
@@ -93,6 +99,8 @@ public class MantisTestUser {
     public void ManageUser()
     {
         // Check and Press button
+        // TODO Не понятно на какой элемент кликается
+        // TODO Автосгенерированный локатор
         assertTrue(driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/ul/li[2]/a")).isDisplayed());
         driver.findElement(By.xpath("//*[@id=\"main-container\"]/div[2]/div[2]/div/ul/li[2]/a")).click();
     }
@@ -101,10 +109,14 @@ public class MantisTestUser {
     public void CreateAccount()
     {
         //Press Create New Account
+        // TODO Не понятно на какой элемент кликается
+        // TODO Автосгенерированный локатор
         assertTrue(driver.findElement(By.xpath("//*[@id=\"manage-user-div\"]/div[1]/a")).isDisplayed());
         driver.findElement(By.xpath("//*[@id=\"manage-user-div\"]/div[1]/a")).click();
 
         //Check Fields
+        // TODO Не понятно на какой элемент кликается
+        // TODO Автосгенерированные локаторы
         assertEquals(driver.findElement(By.xpath("//*[@id=\"manage-user-create-form\"]/div/div[2]/div/div/table/tbody/tr[1]/td[1]")).getText(), "Username");
         assertEquals(driver.findElement(By.xpath("//*[@id=\"manage-user-create-form\"]/div/div[2]/div/div/table/tbody/tr[2]/td[1]")).getText(), "Real Name");
         assertEquals(driver.findElement(By.xpath("//*[@id=\"manage-user-create-form\"]/div/div[2]/div/div/table/tbody/tr[3]/td[1]")).getText(), "E-mail");
@@ -129,6 +141,8 @@ public class MantisTestUser {
         Select dropdown1 = new Select(driver.findElement(By.id("user-access-level")));
         dropdown1.selectByValue("25");
 
+        // TODO Не понятно на какой элемент кликается
+        // TODO Автосгенерированный локатор
         driver.findElement(By.xpath("//*[@id=\"manage-user-create-form\"]/div/div[3]/input")).click();
 
     }
@@ -138,6 +152,7 @@ public class MantisTestUser {
     {
         //Press Log Out
         driver.findElement(By.className("user-info")).click();
+        // TODO Локатор может быть короче
         driver.findElement(By.xpath("//a[@href='/logout_page.php']")).click();
     }
 
@@ -152,6 +167,8 @@ public class MantisTestUser {
         driver.findElement(By.xpath("//input[@value='Login']")).click();
 
         driver.findElement(By.id("password")).sendKeys("qwerty");
+        // TODO Не понятно на какой элемент кликается
+        // TODO Автосгенерированный локатор
         driver.findElement(By.xpath("//*[@id=\"login-form\"]/fieldset/input[3]")).click();
         // Check login
         assertEquals(driver.findElement(By.className("user-info")).getText(),
