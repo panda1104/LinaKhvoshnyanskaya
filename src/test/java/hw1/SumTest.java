@@ -1,3 +1,8 @@
+/* TODO
+        1. Отуствует package
+        2. Для чего присутсвует импорты junit?
+
+ */
 
 import org.junit.*;
 
@@ -21,11 +26,12 @@ public class SumTest {
         System.out.println("Test complete");
     }
 
+    // TODO Эта аннотация из junit
     @Before
     public void initTest() {
         calculator = new Calculator();
     }
-
+    // TODO Эта аннотация из junit
     @After
     public void afterTest() {
         calculator = null;

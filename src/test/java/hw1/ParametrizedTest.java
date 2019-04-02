@@ -1,4 +1,8 @@
+/* TODO
+        1. Отуствует package
+        2. Для чего присутсвует импорты junit?
 
+ */
 import org.junit.*;
 
 import com.epam.tat.module4.Calculator;
