@@ -72,7 +72,7 @@
                     <version>3.0.0-M3</version>
                     <configuration>
                         <suiteXmlFiles>
-                            ${project.basedir}/src/test/resources/SeleniumSuit.xml
+                            ${project.basedir}/src/test/resourses/SeleniumSuit.xml
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
