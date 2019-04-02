@@ -32,7 +32,7 @@ public class MantisTest {
     @BeforeClass
     public void SetUp()
     {
-        System.setProperty("webdriver.chrome.driver", "src\\test\\resources\\webdriver\\chrome\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "src\\test\\resourses\\webdriver\\chrome\\chromedriver.exe");
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
