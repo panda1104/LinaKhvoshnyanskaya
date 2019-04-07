@@ -23,7 +23,7 @@ import java.io.File;
 import java.io.IOException;
 
 import static java.lang.System.setProperty;
-
+// TODO Комментарии ровно такие же как и для MantisTestUser.class
 public class MantisTest {
 
     private WebDriver driver;

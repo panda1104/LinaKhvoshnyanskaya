@@ -1,4 +1,8 @@
+/* TODO
+        1. Отуствует package
+        2. Для чего присутсвует импорты junit?
 
+ */
 import org.junit.*;
 
 import com.epam.tat.module4.Calculator;
@@ -21,11 +25,13 @@ public class MultiplicationTest {
         System.out.println("Test complete");
     }
 
+    // TODO Эта аннотация из junit
     @Before
     public void initTest() {
         calculator = new Calculator();
     }
 
+    // TODO Эта аннотация из junit
     @After
     public void afterTest() {
         calculator = null;
