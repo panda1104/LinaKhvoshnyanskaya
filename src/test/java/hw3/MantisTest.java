@@ -21,7 +21,7 @@ public class MantisTest {
 
     private WebDriver driver;
 
-    private VoidPageObject vpo;
+    private PageObjectVoid pageObjectVoid;
 
     @BeforeSuite(alwaysRun = true)
     public void setUp() {
@@ -37,31 +37,31 @@ public class MantisTest {
 
         // Open Mantis
         driver.get("http://mantis.tiulp.in/login_page.php");
-        vpo = new VoidPageObject(driver);
+        pageObjectVoid = new PageObjectVoid(driver);
     }
 
     @Test
     public void addProject() {
         // Check title
-        assertEquals(vpo.getPageTitle(), "MantisBT");
+        assertEquals(pageObjectVoid.getPageTitle(), "MantisBT");
 
         // Login
-        vpo.login("administrator", "rootroot");
+        pageObjectVoid.login("administrator", "rootroot");
 
         // Check login
         assertEquals(driver.findElement(By.className("user-info")).getText(),
                 "administrator");
 
-        assertTrue(vpo.checkElementById("sidebar"));
+        assertTrue(pageObjectVoid.checkElementById("sidebar"));
 
         //Click Button "Manage"
-        vpo.clickByLinkText("Manage");
+        pageObjectVoid.clickByLinkText("Manage");
 
         //Click button "Manage Projects"
-        vpo.clickByLinkText("Manage Projects");
+        pageObjectVoid.clickByLinkText("Manage Projects");
 
         //Click button "Create New Project"
-        vpo.clickButByXpath("//button[.='Create New Project']");
+        pageObjectVoid.clickButByXpath("//button[.='Create New Project']");
 
         //Check fields
         ArrayList<String> Project = new ArrayList<String>();
@@ -72,21 +72,21 @@ public class MantisTest {
         Project.add("project-description");
 
         for(String field : Project)
-            assertTrue(vpo.checkContById(field));
+            assertTrue(pageObjectVoid.checkElementById(field));
 
 
         // Fill fields
-        vpo.fillFields("project-name", "qwerty");
-        vpo.forFields("project-status", "release");
-        vpo.clickButByXpath("//span[@class='lbl']");
-        vpo.forFields("project-view-state", "public");
-        vpo.fillFields("project-description", "qwerty");
+        pageObjectVoid.fillFields("project-name", "qwerty");
+        pageObjectVoid.fillFields("project-status", "release");
+        pageObjectVoid.clickButByXpath("//span[@class='lbl']");
+        pageObjectVoid.fillFields("project-view-state", "public");
+        pageObjectVoid.fillFields("project-description", "qwerty");
 
-        vpo.clickButByXpath("//input[@value='Add Project']");
+        pageObjectVoid.clickButByXpath("//input[@value='Add Project']");
 
-        vpo.clickByclassName("user-info");
+        pageObjectVoid.clickByclassName("user-info");
 
-        vpo.clickButByXpath("//a[@href='/logout_page.php']");
+        pageObjectVoid.clickButByXpath("//a[@href='/logout_page.php']");
 
 
     }

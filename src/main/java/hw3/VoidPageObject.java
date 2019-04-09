@@ -1,19 +1,18 @@
-package hw3;
+﻿package hw3;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 // TODO Это не очень сильно похоже на PageObject
-public class VoidPageObject {
+public class PageObjectVoid {
 
     private WebDriver driver;
-    private WebElement but;
     private WebElement usernameTextField;
     private WebElement passwordTextField;
     private WebElement loginButton;
 
-    public VoidPageObject(WebDriver driver) {
+    public PageObjectVoid(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -47,22 +46,13 @@ public class VoidPageObject {
         driver.findElement(By.linkText(link)).click();
     }
 
-    public boolean checkContById(String id)
-    {
-        return driver.findElement(By.id(id)).isEnabled();
-    }
 
     public void fillFields(String id, String inf)
     {
-        but = driver.findElement(By.id(id));
-        but.sendKeys(inf);
+        driver.findElement(By.id(id)).sendKeys(inf);
     }
 
     // TODO Из имени метода не понятно, что он делает
-    public void forFields(String id, String inf)
-    {
-        driver.findElement(By.id(id)).sendKeys(inf);
-    }
 
 
     public void clickByclassName(String classname) {

@@ -21,7 +21,7 @@ public class MantisTestUser {
 
     private WebDriver driver;
 
-    private VoidPageObject vpo;
+    private PageObjectVoid pageObjectVoid;
 
     @BeforeSuite(alwaysRun = true)
     public void setUp() {
@@ -37,31 +37,31 @@ public class MantisTestUser {
 
         // Open Mantis
         driver.get("http://mantis.tiulp.in/login_page.php");
-        vpo = new VoidPageObject(driver);
+        pageObjectVoid = new PageObjectVoid(driver);
     }
 
     @Test
-    public void addProject() {
+    public void addUser() {
         // Check title
-        assertEquals(vpo.getPageTitle(), "MantisBT");
+        assertEquals(pageObjectVoid.getPageTitle(), "MantisBT");
 
         // Login
-        vpo.login("administrator", "rootroot");
+        pageObjectVoid.login("administrator", "rootroot");
 
         // Check login
         assertEquals(driver.findElement(By.className("user-info")).getText(),
                 "administrator");
 
-        assertTrue(vpo.checkElementById("sidebar"));
+        assertTrue(pageObjectVoid.checkElementById("sidebar"));
 
         //Click Button "Manage"
-        vpo.clickByLinkText("Manage");
+        pageObjectVoid.clickByLinkText("Manage");
 
         //Click button "Manage Users"
-        vpo.clickByLinkText("Manage Users");
+        pageObjectVoid.clickByLinkText("Manage Users");
 
         //Press Create New Account
-        vpo.clickButByXpath("//div[@class='pull-left']");
+        pageObjectVoid.clickButByXpath("//div[@class='pull-left']");
 
         //Check fields
         ArrayList<String> User = new ArrayList<String>();
@@ -73,27 +73,27 @@ public class MantisTestUser {
         User.add("user-access-level");
 
         for(String field : User)
-            assertTrue(vpo.checkContById(field));
+            assertTrue(pageObjectVoid.checkElementById(field));
 
         //Create New User
-        vpo.fillFields("user-username", "qwerty");
-        vpo.fillFields("user-realname", "qwerty");
-        vpo.fillFields("email-field", "qwerty");
-        vpo.fillFields("user-password", "qwerty");
-        vpo.fillFields("user-verify-password", "qwerty");
-        vpo.forFields("user-access-level", "reporter");
+        pageObjectVoid.fillFields("user-username", "qwerty");
+        pageObjectVoid.fillFields("user-realname", "qwerty");
+        pageObjectVoid.fillFields("email-field", "qwerty");
+        pageObjectVoid.fillFields("user-password", "qwerty");
+        pageObjectVoid.fillFields("user-verify-password", "qwerty");
+        pageObjectVoid.fillFields("user-access-level", "reporter");
 
-        vpo.clickButByXpath("//input[@value='Create User']");
+        pageObjectVoid.clickButByXpath("//input[@value='Create User']");
 
         //LogOut
 
-        vpo.clickByclassName("user-info");
-        vpo.clickButByXpath("//a[@href='/logout_page.php']");
+        pageObjectVoid.clickByclassName("user-info");
+        pageObjectVoid.clickButByXpath("//a[@href='/logout_page.php']");
 
-        assertEquals(vpo.getPageTitle(), "MantisBT");
+        assertEquals(pageObjectVoid.getPageTitle(), "MantisBT");
 
         // Login
-        vpo.login("qwerty", "qwerty");
+        pageObjectVoid.login("qwerty", "qwerty");
 
         // Check login
         assertEquals(driver.findElement(By.className("user-info")).getText(),
@@ -101,8 +101,8 @@ public class MantisTestUser {
 
         //LogOut
 
-        vpo.clickByclassName("user-info");
-        vpo.clickButByXpath("//a[@href='/logout_page.php']");
+        pageObjectVoid.clickByclassName("user-info");
+        pageObjectVoid.clickButByXpath("//a[@href='/logout_page.php']");
 
     }
 
