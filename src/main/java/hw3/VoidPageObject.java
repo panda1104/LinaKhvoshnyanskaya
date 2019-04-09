@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+// TODO Это не очень сильно похоже на PageObject
 public class VoidPageObject {
 
     private WebDriver driver;
@@ -57,6 +58,7 @@ public class VoidPageObject {
         but.sendKeys(inf);
     }
 
+    // TODO Из имени метода не понятно, что он делает
     public void forFields(String id, String inf)
     {
         driver.findElement(By.id(id)).sendKeys(inf);
