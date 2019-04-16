@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import java.util.ArrayList;
 
-// TODO Java Code Convention for the variables names
+// TODO Тест не читаем
 public class MantisTest {
 
     private WebDriver driver;

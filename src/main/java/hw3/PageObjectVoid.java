@@ -52,8 +52,6 @@ public class PageObjectVoid {
         driver.findElement(By.id(id)).sendKeys(inf);
     }
 
-    // TODO Из имени метода не понятно, что он делает
-
 
     public void clickByclassName(String classname) {
         driver.findElement(By.className(classname)).click();
