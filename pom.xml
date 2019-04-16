@@ -83,7 +83,7 @@
                     <version>3.0.0-M3</version>
                     <configuration>
                         <suiteXmlFiles>
-                            ${project.basedir}/src/test/resourses/Lab3.xml
+                            ${project.basedir}/src/test/resourses/Lab4.xml
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>

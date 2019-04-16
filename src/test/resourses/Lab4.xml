@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="MantisbtTestsSuite" verbose="1">
+
+    <test name="Test project">
+        <classes>
+            <class name="hw4.MantisIssuesTest"/>
+        </classes>
+    </test>
+
+    <test name="Test User">
+        <classes>
+            <class name="hw4.MantisUserTest"/>
+        </classes>
+    </test>
+
+
+
+</suite>
