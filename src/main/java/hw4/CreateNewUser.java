@@ -36,8 +36,10 @@ public class CreateNewUser extends AbstractBasePage{
         super(driver);
     }
 
+    // TODO Java Code convention
     public void FillFields ()
     {
+        // TODO не должно быть захардкоженных данных
         userName.sendKeys("qwerty");
         realName.sendKeys("qwerty");
         email.sendKeys("qwerty");

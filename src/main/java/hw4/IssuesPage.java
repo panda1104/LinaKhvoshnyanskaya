@@ -56,6 +56,7 @@ public class IssuesPage extends AbstractBasePage{
 
     public void setPriority(){
         priority.click();
+        // TODO не должно быть захардкоженных данных
         selectMenu("show_priority_filter_target", "5");
         //prioritySelectFirst.click();
         //new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOf(prioritySelectSecond)).click();
@@ -63,6 +64,7 @@ public class IssuesPage extends AbstractBasePage{
 
     public void setSeverity()
     {
+        // TODO не должно быть захардкоженных данных
         severity.click();
         selectMenu("show_severity_filter_target", "5");
     }
@@ -83,6 +85,7 @@ public class IssuesPage extends AbstractBasePage{
 
     public void setStartYear()
     {
+        // TODO не должно быть захардкоженных данных
         this.startYear.click();
         Select select = new Select(this.startYear);
         select.selectByVisibleText("2019");
@@ -90,12 +93,14 @@ public class IssuesPage extends AbstractBasePage{
 
     public void setStartMonth()
     {
+        // TODO не должно быть захардкоженных данных
         this.startMonth.click();
         Select select = new Select(this.startMonth);
         select.selectByVisibleText("March");
     }
     public void setStartDay()
     {
+        // TODO не должно быть захардкоженных данных
         this.startDay.click();
         Select select = new Select(this.startDay);
         select.selectByVisibleText("27");
@@ -103,6 +108,7 @@ public class IssuesPage extends AbstractBasePage{
 
     public void setEndYear()
     {
+        // TODO не должно быть захардкоженных данных
         this.endYear.click();
         Select select = new Select(this.endYear);
         select.selectByVisibleText("2019");
@@ -110,12 +116,14 @@ public class IssuesPage extends AbstractBasePage{
 
     public void setEndMonth()
     {
+        // TODO не должно быть захардкоженных данных
         this.endMonth.click();
         Select select = new Select(this.endMonth);
         select.selectByVisibleText("April");
     }
     public void setEndDay()
     {
+        // TODO не должно быть захардкоженных данных
         this.endDay.click();
         Select select = new Select(this.endDay);
         select.selectByVisibleText("1");
