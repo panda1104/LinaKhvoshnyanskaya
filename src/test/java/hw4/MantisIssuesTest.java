@@ -12,6 +12,7 @@ import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
 public class MantisIssuesTest {
+    // TODO Лучше вынести поля в базовый класс
     private WebDriver driver;
     private LoginPage loginPage;
     private MainPage mainPage;
@@ -20,11 +21,13 @@ public class MantisIssuesTest {
     private CreateNewUser createNewUser;
     private IssuesPage issuesPage;
 
+    // TODO Лучше вынести в базовый класс
     @BeforeSuite(alwaysRun = true)
     public void setUp() {
         ChromeDriverManager.chromedriver().setup();
     }
 
+    // TODO Лучше вынести в базовый класс
     @BeforeMethod(alwaysRun = true)
     public void initDriver() {
         driver = new ChromeDriver();
@@ -73,6 +76,7 @@ public class MantisIssuesTest {
 
     }
 
+    // TODO Лучше вынести в базовый класс
    @AfterMethod
    public void closeDriver()
    {
