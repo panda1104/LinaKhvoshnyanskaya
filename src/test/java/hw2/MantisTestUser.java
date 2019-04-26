@@ -1,4 +1,4 @@
-﻿package hw2;
+package hw2;
 
 // TODO unused imports
 import org.apache.commons.io.FileUtils;

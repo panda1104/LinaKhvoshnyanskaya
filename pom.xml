@@ -11,6 +11,7 @@
   <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -83,7 +84,7 @@
                     <version>3.0.0-M3</version>
                     <configuration>
                         <suiteXmlFiles>
-                            ${project.basedir}/src/test/resourses/Lab4.xml
+                            ${project.basedir}/src/test/resourses/Lab3.xml
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>

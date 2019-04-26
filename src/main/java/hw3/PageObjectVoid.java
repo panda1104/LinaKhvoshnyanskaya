@@ -1,4 +1,4 @@
-﻿package hw3;
+package hw3;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

@@ -1,4 +1,4 @@
-﻿package hw3;
+package hw3;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.By;
