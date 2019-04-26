@@ -1,4 +1,4 @@
-package hw3;
+﻿package hw3;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.By;
@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import java.util.ArrayList;
 
-// TODO Тест не читаем
+// TODO Java Code Convention for the variables names
 public class MantisTest {
 
     private WebDriver driver;
@@ -52,41 +52,36 @@ public class MantisTest {
         assertEquals(driver.findElement(By.className("user-info")).getText(),
                 "administrator");
 
-        assertTrue(pageObjectVoid.checkElementById("sidebar"));
-
         //Click Button "Manage"
-        pageObjectVoid.clickByLinkText("Manage");
-
-        //Click button "Manage Projects"
-        pageObjectVoid.clickByLinkText("Manage Projects");
+        pageObjectVoid.leftMenu("Manage", "Manage Projects");
 
         //Click button "Create New Project"
-        pageObjectVoid.clickButByXpath("//button[.='Create New Project']");
+        pageObjectVoid.selectTextButton("button", "Create New Project");
+
 
         //Check fields
-        ArrayList<String> Project = new ArrayList<String>();
-        Project.add("project-name");
-        Project.add("project-status");
-        Project.add("project-inherit-global");
-        Project.add("project-view-state");
-        Project.add("project-description");
+        assertEquals(pageObjectVoid.checkField(1), "* Project Name");
+        assertEquals(pageObjectVoid.checkField(2), "Status");
+        assertEquals(pageObjectVoid.checkField(3), "Inherit Global Categories");
+        assertEquals(pageObjectVoid.checkField(4), "View Status");
+        assertEquals(pageObjectVoid.checkField(5), "Description");
 
-        for(String field : Project)
-            assertTrue(pageObjectVoid.checkElementById(field));
+        //Fill fields
+        pageObjectVoid.userInformation("project-name", "qwerty");
+        pageObjectVoid.selectButton("project-status", "1");
+        pageObjectVoid.clickBtnByClassName("lbl");
+        pageObjectVoid.selectButton("project-view-state", "1");
+        pageObjectVoid.userInformation("project-description", "qwerty");
 
+        //Press button "Add Project"
+        pageObjectVoid.selectValueBtn("input", "Add Project");
 
-        // Fill fields
-        pageObjectVoid.fillFields("project-name", "qwerty");
-        pageObjectVoid.fillFields("project-status", "release");
-        pageObjectVoid.clickButByXpath("//span[@class='lbl']");
-        pageObjectVoid.fillFields("project-view-state", "public");
-        pageObjectVoid.fillFields("project-description", "qwerty");
-
-        pageObjectVoid.clickButByXpath("//input[@value='Add Project']");
+        //LogOut
 
         pageObjectVoid.clickByclassName("user-info");
-
         pageObjectVoid.clickButByXpath("//a[@href='/logout_page.php']");
+
+
 
 
     }

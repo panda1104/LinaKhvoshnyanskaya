@@ -1,4 +1,4 @@
-package hw3;
+﻿package hw3;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 import org.openqa.selenium.By;
@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import java.util.ArrayList;
 
-// TODO Тест не читаем
+// TODO Java Code Convention for the variables names
 public class MantisTestUser {
 
     private WebDriver driver;
@@ -52,39 +52,35 @@ public class MantisTestUser {
         assertEquals(driver.findElement(By.className("user-info")).getText(),
                 "administrator");
 
-        assertTrue(pageObjectVoid.checkElementById("sidebar"));
-
         //Click Button "Manage"
-        pageObjectVoid.clickByLinkText("Manage");
-
-        //Click button "Manage Users"
-        pageObjectVoid.clickByLinkText("Manage Users");
+        pageObjectVoid.leftMenu("Manage", "Manage Users");
 
         //Press Create New Account
-        pageObjectVoid.clickButByXpath("//div[@class='pull-left']");
+        pageObjectVoid.selectTextButton("a", "Create New Account");
+
+        assertEquals(pageObjectVoid.getPageTitle(), "MantisBT");
 
         //Check fields
-        ArrayList<String> User = new ArrayList<String>();
-        User.add("user-username");
-        User.add("user-realname");
-        User.add("email-field");
-        User.add("user-password");
-        User.add("user-verify-password");
-        User.add("user-access-level");
+        assertEquals(pageObjectVoid.checkField(1), "Username");
+        assertEquals(pageObjectVoid.checkField(2), "Real Name");
+        assertEquals(pageObjectVoid.checkField(3), "E-mail");
+        assertEquals(pageObjectVoid.checkField(4), "Password");
+        assertEquals(pageObjectVoid.checkField(5), "Verify Password");
+        assertEquals(pageObjectVoid.checkField(6), "Access Level");
+        assertEquals(pageObjectVoid.checkField(7), "Enabled");
+        assertEquals(pageObjectVoid.checkField(8), "Protected");
 
-        for(String field : User)
-            assertTrue(pageObjectVoid.checkElementById(field));
+
 
         //Create New User
-        pageObjectVoid.fillFields("user-username", "qwerty");
-        pageObjectVoid.fillFields("user-realname", "qwerty");
-        pageObjectVoid.fillFields("email-field", "qwerty");
-        pageObjectVoid.fillFields("user-password", "qwerty");
-        pageObjectVoid.fillFields("user-verify-password", "qwerty");
-        pageObjectVoid.fillFields("user-access-level", "reporter");
+        pageObjectVoid.userInformation("user-username", "qwerty");
+        pageObjectVoid.userInformation("user-realname", "qwerty");
+        pageObjectVoid.userInformation("email-field", "qwerty");
+        pageObjectVoid.userInformation("user-password", "qwerty");
+        pageObjectVoid.userInformation("user-verify-password", "qwerty");
+        pageObjectVoid.selectButton("user-access-level", "2");
 
-        pageObjectVoid.clickButByXpath("//input[@value='Create User']");
-
+        pageObjectVoid.selectValueBtn("input", "Create User");
         //LogOut
 
         pageObjectVoid.clickByclassName("user-info");
