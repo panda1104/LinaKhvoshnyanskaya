@@ -8,7 +8,7 @@
     <artifactId>junitStudy</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-  <properties>
+    <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -36,7 +36,6 @@
             <type>jar</type>
             <systemPath>${project.basedir}/calculator-1.0.jar</systemPath>
         </dependency>
-
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
@@ -49,13 +48,29 @@
             <version>2.6</version>
         </dependency>
 
-
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>3.2.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>3.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20180813</version>
+        </dependency>
 
     </dependencies>
 
@@ -84,7 +99,7 @@
                     <version>3.0.0-M3</version>
                     <configuration>
                         <suiteXmlFiles>
-                            ${project.basedir}/src/test/resourses/Lab3.xml
+                            ${project.basedir}/src/test/resourses/Lab5.xml
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
